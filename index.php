@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include "page/header.php";
 include_once "config.php";
 $pdo = new PDO("mysql:host=" . Config::SERVEUR . ";dbname=" . Config::BDD, Config::UTILISATEUR, Config::MOTDEPASSE);
 $requete = $pdo->prepare("SELECT * FROM log");   //préparation de la requete
@@ -8,8 +8,13 @@ $admin = $requete->fetchAll();     //récupération du résultat*
 ?>
 <div class="row align-items-center g-lg-5 py-5">
     <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 mb-3">Ceci est un titre</h1>
-        <p class="col-lg-10 fs-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid autem culpa dignissimos eum eveniet fugiat illo ipsa, non odit officiis omnis quis recusandae rem sint sit velit? Commodi, natus?</p>
+        <div class="px-3">
+            <h1>Cover your page.</h1>
+            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+            <p class="lead">
+                <a href="page/comptage.php" class="btn btn-lg btn-secondary fw-bold border-black bg-black">Entré un relevé</a>
+            </p>
+        </div>
     </div>
     <div class="col-md-10 mx-auto col-lg-5">
         <form class="p-4 p-md-5 border rounded-3 bg-light">
@@ -28,5 +33,5 @@ $admin = $requete->fetchAll();     //récupération du résultat*
     </div>
 </div>
 <?php
-include "footer.php";
+include "page/footer.php";
 ?>
